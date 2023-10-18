@@ -14,14 +14,25 @@ This repository contains both an Apex class and a Visualforce page designed to p
 - Handle various field types, including dates, datetimes, booleans, and textareas.
 - Display detailed messages about the insertion process.
 - Utilizes the external id field for upserting records.
+- 
 
-## Getting Started
+## Usage
 
-To use the Apex class and Visualforce page, follow these steps:
+-Upload CSV:
 
-1. [Clone or Download](#clone-or-download) the repository.
-2. [Deploy to Salesforce](#deploy-to-salesforce) using Salesforce Workbench or other deployment tools.
-3. [Access the Visualforce Page](#access-the-visualforce-page) to interact with the class.
+![image](https://github.com/psagredo99/CSVtoContactsVFP/assets/72439144/386f1116-fe7f-4a08-af20-50cf07ce39cb)
+
+
+-CSV is uploaded and validated:
+
+![image](https://github.com/psagredo99/CSVtoContactsVFP/assets/72439144/1031125e-4b0b-4929-b2f0-aa39fc39f524)
+
+-Result (Inserted + Updated):
+
+![image](https://github.com/psagredo99/CSVtoContactsVFP/assets/72439144/fd6773cd-7042-4f8b-8583-86e98d8c5f2c)
+
+
+
 
 ### Clone or Download
 

@@ -1,0 +1,59 @@
+<apex:page controller="UploadCSVController">
+    <h1 style="font-size:30px; text-align:center;">Importar contactos desde archivo csv</h1><br/><br/>
+    
+    <apex:form id="idForm">
+        <apex:pageMessages /><br/><br/>
+        
+        <apex:pageBlock tabStyle="Contact" id="idInputBlock">
+            <p style="height:13px; font-size:13px"><b>Establecer la primera columna del archivo CSV como LastName:</b></p><br/>
+            <apex:inputFile value="{!fileBody}" fileSize="{!fileSize}" fileName="{!fileName}" accept=".csv" contentType="text/csv" id="idInputFile"></apex:inputFile> <!-- Archivo de Entrada -->
+            <apex:commandButton value="Subir Archivo" action="{!ReadFromFile}" onclick="document.getElementById('actionStatusUP').style.display = 'inline';" /> <!-- Botón de Carga para cargar el archivo -->
+            <img src="/img/loading.gif" style="display:none" id="actionStatusUP" />
+            <apex:pageBlockButtons location="bottom">
+                <!-- Botón de Guardar para insertar los registros -->
+                <apex:commandButton value="Guardar" action="{!save}" rendered="{!reVariableSave}" onclick="document.getElementById('imageSV').style.display = 'inline';" />
+                <img src="/img/loading.gif" style="display:none" id="imageSV" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        
+        <apex:pageBlock rendered="{!reVariableBlock}" id="idTable">
+            <apex:pageBlockSection collapsible="false" columns="2">
+                <p><b>Total de Registros en el Archivo CSV:&nbsp;</b></p>
+                <apex:outputText value="{!totalRecords}" style="color:black" />
+                <p><b>Número de Registros Insertados Exitosamente:&nbsp;</b>
+                </p>
+                <apex:outputText value="{!insertedRecords}" style="color:green" />
+                <p><b>Número de Registros Actualizados Exitosamente:&nbsp;</b>
+                </p>
+                <apex:outputText value="{!updatedRecords}" style="color:blue" />
+                <p><b>Número de Registros Fallidos:&nbsp;</b></p>
+                <apex:outputText value="{!failedRecords}" style="color:red" />
+            </apex:pageBlockSection><br/>
+
+        <apex:pageBlockSection title="Resultados de la importacion" collapsible="false" columns="2">
+
+                <apex:pageBlockSection rendered="{!reVariableInsert}" collapsible="false">
+                    <apex:facet name="header">
+                        <center><h1 style="color: dodgerwhite;">Contactos INSERTADOS</h1></center>
+                    </apex:facet>
+                    <apex:pageBlockTable value="{!insertedContactsList}" rendered="{!reVariableInsert}" var="con">
+                        <apex:repeat value="{!fieldNamesList}" var="fld">
+                            <apex:column value="{!con[fld]}" />
+                        </apex:repeat>
+                    </apex:pageBlockTable>
+                </apex:pageBlockSection>
+
+                <apex:pageBlockSection rendered="{!reVariableUpdate}" collapsible="false">
+                    <apex:facet name="header">
+                        <center><h1 style="color: dodgerwhite;">Contactos ACTUALIZADOS</h1></center>
+                    </apex:facet>
+                    <apex:pageBlockTable value="{!updatedContactsList}" rendered="{!reVariableUpdate}" var="con">
+                        <apex:repeat value="{!fieldNamesList}" var="fld">
+                            <apex:column value="{!con[fld]}" />
+                        </apex:repeat>
+                    </apex:pageBlockTable>
+                </apex:pageBlockSection>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

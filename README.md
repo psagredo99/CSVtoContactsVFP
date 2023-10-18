@@ -3,8 +3,13 @@
 A Salesforce Apex class and Visualforce page for upserting contact records from a CSV file based on the external id field.
 
 By: Pablo Sagredo
-## Description
 
+<a href="https://githubsfdeploy.herokuapp.com?owner=psagredo99&repo=CSVtoContactsVFP">
+  <img alt="Deploy to Salesforce"
+       src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
+</a>
+
+## Description
 This repository contains both an Apex class and a Visualforce page designed to process and insert data from a CSV file into Salesforce Contact objects. It includes methods for reading CSV files, validating and transforming data, inserting records, and displaying the results.
 
 ## Features

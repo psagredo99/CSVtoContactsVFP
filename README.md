@@ -4,7 +4,7 @@ A Salesforce Apex class and Visualforce page for upserting contact records from 
 
 By: Pablo Sagredo
 
-<a href="https://githubsfdeploy.herokuapp.com?owner=psagredo99&repo=CSVtoContactsVFP">
+<a href="https://githubsfdeploy.herokuapp.com?owner=psagredo99&repo=CSVtoContactsVFP&ref=main">
   <img alt="Deploy to Salesforce"
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
 </a>

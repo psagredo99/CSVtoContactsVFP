@@ -157,7 +157,7 @@ public with sharing class UploadCSVController {
     //Save method to insert the Contact Recods and counting inserted records and failed records----------------------------------------------------------------------
     public Pagereference save(){
         reVariableBlock = true;
-        Database.UpsertResult[] srList = Database.upsert(contactsList, Contact.Correo_Externo__c);
+        Database.UpsertResult[] srList = Database.upsert(contactsList, Contact.email);
         
         contactsList.clear();
         Set<Id> savedContactIdSet = new Set<Id>();

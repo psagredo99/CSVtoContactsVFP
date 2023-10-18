@@ -10,6 +10,7 @@ This repository contains both an Apex class and a Visualforce page designed to p
 ## Features
 
 - Upload CSV files and validate them before insertion.
+- Able to auto map the fields
 - Handle various field types, including dates, datetimes, booleans, and textareas.
 - Display detailed messages about the insertion process.
 - Utilizes the external id field for upserting records.
